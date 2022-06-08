@@ -1,0 +1,6 @@
+rootProject.name = 'usersManager'
+
+include 'application'
+include 'boot'
+include 'domain'
+include 'infrastructure'

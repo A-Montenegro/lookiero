@@ -1,0 +1,46 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'jacoco'
+	id 'java'
+}
+
+group = 'com.lookiero'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+configurations.all {
+	exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.projectlombok:lombok'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'javax.validation:validation-api'
+	implementation 'org.junit.jupiter:junit-jupiter-engine'
+	implementation 'org.junit.jupiter:junit-jupiter-api'
+	implementation 'org.junit.platform:junit-platform-surefire-provider:1.0.0-M2'
+	implementation 'org.mockito:mockito-core'
+	implementation 'org.mockito:mockito-junit-jupiter'
+	implementation 'org.slf4j:slf4j-api'
+}
+test {
+	finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+	dependsOn test
+}
+tasks.named('test') {
+	useJUnitPlatform()
+}
