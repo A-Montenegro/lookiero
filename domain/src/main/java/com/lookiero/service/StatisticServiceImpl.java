@@ -15,16 +15,6 @@ public class StatisticServiceImpl implements StatisticServicePort {
     }
 
     @Override
-    public StatisticDto add(final StatisticDto statisticDto) {
-        return statisticPersistencePort.add(statisticDto);
-    }
-
-    @Override
-    public StatisticDto update(final StatisticDto statisticDto) {
-        return statisticPersistencePort.update(statisticDto);
-    }
-
-    @Override
     public List<StatisticDto> findAll() {
         return statisticPersistencePort.findAll();
     }

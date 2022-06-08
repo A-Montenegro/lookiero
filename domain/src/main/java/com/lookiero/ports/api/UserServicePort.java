@@ -11,6 +11,4 @@ public interface UserServicePort {
     UserDto update(final UpdateUserDto incomingUpdateUserDto);
 
     List<UserDto> findAll();
-
-    List<UserDto> findByYear(final Integer year);
 }

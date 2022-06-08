@@ -61,11 +61,6 @@ public class UserServiceImpl implements UserServicePort {
         return this.userPersistencePort.findAll();
     }
 
-    @Override
-    public List<UserDto> findByYear(final Integer year) {
-        return userPersistencePort.findByBirthYear(year);
-    }
-
     private void updateStatistic(final Integer birthYear) {
         final List<UserDto> usersByYear = this.userPersistencePort.findByBirthYear(birthYear);
         final BigDecimal averageBmi = this.getAverageBmi(usersByYear);

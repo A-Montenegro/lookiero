@@ -155,16 +155,6 @@ public class UserServiceImplTest {
     }
 
     @Nested
-    class FindByYear {
-        @Test
-        void when_callFindAll_expect_callPortFindAllMethod() {
-            UserServiceImplTest.this.userService.findByYear(USER_BIRTH_DATE.getYear());
-
-            Mockito.verify(UserServiceImplTest.this.userPersistencePort).findByBirthYear(USER_BIRTH_DATE.getYear());
-        }
-    }
-
-    @Nested
     class FindAll {
         @Test
         void when_callFindAll_expect_callPortFindAllMethod() {
